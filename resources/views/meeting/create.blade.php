@@ -25,6 +25,20 @@
 							</div>
 						</div>
 						<div class="form-group">
+							<label for="inputsm" class="control-label col-lg-4 col-sm-4">Organiser*</label>
+							<div class="col-lg-8 col-sm-8">
+								<select class="form-control formSelect " name="organiser" >
+									@foreach($organiser as $user)
+										@if( auth()->user()->id == $user->id)
+											<option value=" {{ $user->id }} " selected>{{ $user->name }}</option>
+										@else
+											<option value=" {{ $user->id }} ">{{ $user->name }}</option>
+										@endif	
+									@endforeach
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
 							<label for="inputsm" class="control-label col-lg-4 col-sm-4">Additional Attendee/s</label>
 							<div class="col-lg-8 col-sm-8">
 								<input class="form-control " name="email" type="email" id="externalParticipants">

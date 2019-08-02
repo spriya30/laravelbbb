@@ -12,4 +12,10 @@ class Meeting extends Model
         'meeting_subject',
         'attendee',    	
     ];
+
+    public function User() {
+
+        return $this->belongsTo('App\User','organiser');
+    
+    }
 }

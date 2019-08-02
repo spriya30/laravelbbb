@@ -12,7 +12,8 @@ class MeetingController extends Controller
 	public function create()
 	{	
 		$users = User::all();
-		return view('meeting.create',compact('users'));
+		$organiser = User::orderBy('name','asc')->get();
+		return view('meeting.create',compact('users', 'organiser'));
 	}
 
     public function store(Request $request)	
@@ -20,7 +21,7 @@ class MeetingController extends Controller
 		// Meeting::create($request->all());
 		$meeting_data = $request->all();
 		$meeting_data['meetingID'] = '12345';
-		$meeting = Meeting::create($meeting_data);
+		$meetings = Meeting::create($meeting_data);
 		return redirect('/meeting/list')->with('message','Meeting created successfully');		
 	}
 

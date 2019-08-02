@@ -8,7 +8,8 @@
 				<tr>
                     <th>Meeting ID</th>
 					<th>Meeting Name</th>										
-					<th>Duration</th>				
+					<th>Duration</th>	
+					<th>Organiser</th>	
 					<th>Action</th>
 				</tr>
 			</thead>
@@ -18,6 +19,7 @@
 					<td>{{$meeting->meetingID}}</td>
 					<td>{{$meeting->meetingName}}</td>
 					<td>{{$meeting->duration}}</td>
+					<td>{{$meeting->organiser}}</td>
                 </tr>						
 			@endforeach
 			</tbody>

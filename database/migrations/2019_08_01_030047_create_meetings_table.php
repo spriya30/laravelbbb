@@ -20,7 +20,8 @@ class CreateMeetingsTable extends Migration
 			$table->string('attendee_password')->nullable();
 			$table->string('moderator_password')->nullable();
 			$table->string('duration')->nullable();
-            $table->text('meeting_subject')->nullable();             
+            $table->text('meeting_subject')->nullable();  
+            $table->integer('organiser')->nullable();           
             $table->text('attendee')->nullable();
             $table->timestamps();
         });
